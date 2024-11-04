@@ -163,7 +163,7 @@ function Carousel() {
   return (
     <>
       <div className="relative min-h-[600px] h-screen overflow-hidden bg-black">
-        <div className="z-20 py-10 absolute top-[10%] left-1/2 -translate-x-1/2 flex gap-4">
+        <div className="z-20 py-10 w-full absolute top-[10%] left-1/2 -translate-x-1/2 flex items-center justify-center gap-4">
           {data.map((_, i: number) => (
             <div
               onClick={() => {
@@ -173,7 +173,7 @@ function Carousel() {
                 }
               }}
               key={i}
-              className="h-[1px] w-12 bg-[#797979] z-20 cursor-pointer"
+              className="h-[1px] w-[10%] lg:w-[5%] bg-[#797979] z-20 cursor-pointer"
             >
               <AnimatePresence mode="sync">
                 {currentIndex === i && (
@@ -215,7 +215,7 @@ function Carousel() {
             />
           </div>
         ))}
-        <AnimatePresence custom={direction} mode="sync">
+        <AnimatePresence initial={false} custom={direction} mode="sync">
           {data.map(
             (item, i) =>
               i === currentIndex && (
