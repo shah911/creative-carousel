@@ -121,6 +121,7 @@ function Carousel() {
     if (!visible) return;
 
     intervalId.current = setInterval(() => {
+      setDirection("next");
       setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
       setRemainingTime(6000); // Reset remaining time after each slide change
     }, remainingTime);
